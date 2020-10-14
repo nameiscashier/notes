@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+@font-face {
+  font-family: qtpi;
+  src: url("https://zephyo.github.io/5fonts10hours/qtpi/qtpi.otf");
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+body {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/blanket.png");
+  font-family: qtpi;
+  font-size: 20px;
+  color: #6d2e51;
+}
+
+.top-left,
+.top-right,
+.bot-left,
+.bot-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  -webkit-filter: drop-shadow(-0.2rem 0.2rem 0.4rem rgba(100, 9, 30, 0.3));
+          filter: drop-shadow(-0.2rem 0.2rem 0.4rem rgba(100, 9, 30, 0.3));
+}
+
+.top-left {
+  background-position: top left;
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/topleft.png");
+}
+
+.top-right {
+  background-position: top right;
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/topright.png");
+}
+.top-right .time {
+  color: white;
+  position: absolute;
+  right: 146px;
+  top: 227px;
+  width: 52px;
+  text-align: right;
+  -webkit-transform: rotate(13deg);
+          transform: rotate(13deg);
+  font-size: 1.3rem;
+  font-family: "Share Tech Mono", monospace;
+  text-shadow: 0 0 0.4rem rgba(255, 255, 255, 0.8);
+}
+
+.bot-left {
+  background-position: bottom left;
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/botleft.png");
+}
+
+.bot-right {
+  background-position: bottom right;
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/botright.png");
+}
+
+.controls {
+  position: absolute;
+  left: 20vw;
+  right: 25vw;
+  top: 90px;
+  text-align: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  text-shadow: 0 0 1rem white;
+}
+.controls #new-btn {
+  background: #e36b6b;
+  border-radius: 5px;
+  color: white;
+  font-size: 2rem;
+  width: 38px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.controls #new-btn:hover {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+.controls.success {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  flex-wrap: wrap;
+}
+.controls.success #new-btn {
+  margin: 2vw;
+}
+.controls.success p {
+  display: none;
+}
+
+#notes {
+  padding: 160px 160px 100px 100px;
+  position: relative;
+}
+#notes .sticky {
+  cursor: move;
+  display: inline-block;
+  position: relative;
+  padding: 42px;
+  padding-top: 35px;
+  width: 247px;
+  height: 247px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+          justify-content: stretch;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: drop-shadow(-0.2rem 0.4rem 0.8rem rgba(100, 9, 30, 0.3));
+          filter: drop-shadow(-0.2rem 0.4rem 0.8rem rgba(100, 9, 30, 0.3));
+  opacity: 0;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+}
+#notes .sticky:hover {
+  -webkit-transform: scale(1.05) !important;
+          transform: scale(1.05) !important;
+}
+#notes .sticky textarea {
+  font-family: inherit;
+  resize: none;
+  border: none;
+  background: none;
+  color: #6d2e51;
+}
+#notes .sticky textarea.note-title {
+  font-size: 1.7rem;
+  height: 2.2rem;
+  overflow: hidden;
+}
+#notes .sticky textarea.note-content {
+  font-size: 1.2rem;
+  -webkit-box-flex: 1;
+          flex: auto;
+}
+#notes .sticky textarea::-webkit-input-placeholder {
+  color: #94878a;
+}
+#notes .sticky textarea::-moz-placeholder {
+  color: #94878a;
+}
+#notes .sticky textarea:-ms-input-placeholder {
+  color: #94878a;
+}
+#notes .sticky textarea::-ms-input-placeholder {
+  color: #94878a;
+}
+#notes .sticky textarea::placeholder {
+  color: #94878a;
+}
+#notes .sticky .time {
+  color: #63b2d0;
+}
+#notes .sticky .delete {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  padding: 0px 42px 0px 10.5px;
+  font-size: 2rem;
+  color: #e36b6b;
+  cursor: pointer;
+}
+#notes .s-1 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/plain.png");
+}
+#notes .s-2 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/berry_print.png");
+}
+#notes .s-3 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/peach_print.png");
+}
+#notes .s-4 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/heart_print.png");
+}
+#notes .s-4.sticky {
+  padding-top: 45px;
+}
+#notes .s-4.sticky textarea {
+  color: #8b4362;
+}
+#notes .s-4.sticky .time {
+  color: #c18da2;
+}
+#notes .s-5 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/rose.png");
+}
+#notes .s-5 textarea {
+  color: #474f63;
+}
+#notes .s-5 .time {
+  color: #dfa5ca;
+}
+#notes .s-6 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/berry.png");
+}
+#notes .s-6 textarea {
+  color: white;
+}
+#notes .s-6 .time {
+  color: #fea1aa;
+}
+#notes .s-7 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/bread.png");
+}
+#notes .s-7 .note-title {
+  padding-left: 12px;
+}
+#notes .s-7 textarea {
+  color: #a75037;
+}
+#notes .s-7 .time {
+  color: #88acb2;
+}
+#notes .s-8 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/brown_choco.png");
+}
+#notes .s-8 textarea {
+  color: #e8e7e6;
+}
+#notes .s-8 .time {
+  color: #c1d2d1;
+}
+#notes .s-8 .delete {
+  color: #f7c9ee;
+}
+#notes .s-9 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/pink_choco.png");
+}
+#notes .s-9 .time {
+  color: #108292;
+}
+#notes .s-10 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/egg_cat.png");
+}
+#notes .s-10 textarea {
+  color: #372f3b;
+}
+#notes .s-10 .time {
+  color: #1455c2;
+}
+#notes .s-11 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/bunny.png");
+}
+#notes .s-12 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/cat.png");
+}
+#notes .s-12.sticky {
+  padding-top: 58px;
+}
+#notes .s-12.sticky textarea {
+  color: #403433;
+}
+#notes .s-12.sticky .time {
+  color: #9ca7b3;
+}
+#notes .s-13 {
+  background-image: url("https://zephyo.github.io/22Days/code/18/graphics/panda.png");
+}
+#notes .s-13.sticky {
+  padding-top: 67px;
+}
+#notes .s-13.sticky textarea {
+  color: #411d32;
+}
+#notes .s-13.sticky .time {
+  color: #9d869c;
+}
+
+#theme-selector {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: -2px;
+  right: -60px;
+  display: grid;
+  grid-template-columns: repeat(2, 28px);
+  grid-auto-rows: 28px;
+  grid-gap: 5px;
+  place-items: stretch;
+  background: rgba(109, 46, 81, 0.35);
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+#theme-selector > div {
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  -webkit-transition: inherit;
+  transition: inherit;
+  background-size: 200%;
+  background-position: 50% 15%;
+}
+#theme-selector > div:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("http://33.media.tumblr.com/fae6221558d9c7e433157c6a7d1ed1e9/tumblr_n5w7sdQJ6C1qkprgpo1_400.gif");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 860px) {
+  .top-left {
+    -webkit-transform-origin: 10% 25%;
+            transform-origin: 10% 25%;
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+
+  .top-right {
+    background-position: calc(100% + 80px) -135px;
+  }
+  .top-right .time {
+    top: 90px;
+    right: 65px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .controls.success h2 {
+    display: none;
+  }
+}
+@media only screen and (max-height: 510px) {
+  .bot-left {
+    background-position: 0 calc(100% + 80px);
+    background-size: 200px;
+  }
+
+  .bot-right {
+    background-position: 100% calc(100% + 80px);
+    background-size: 140px;
+  }
+
+  .top-right {
+    background-position: calc(100% + 80px) -180px;
+  }
+  .top-right .time {
+    top: 45px;
+    right: 65px;
+  }
+}
